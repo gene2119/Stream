@@ -58,8 +58,9 @@ class LessonStreamTest {
     @Test
     void mappingToList() {
         int[] numbers = {1, 2, 3, 4, 5};
+        List<Integer> actuallist = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> expectedList = lessonStream.mappingToList(numbers);
-        System.out.println(expectedList);
+        assertEquals(expectedList, actuallist);
 
 
     }
@@ -72,9 +73,9 @@ class LessonStreamTest {
         list.add(3);
         list.add(4);
 
-        int[] numbers = lessonStream.mappingToArray(list);
-        for (Integer num : numbers) {
-            System.out.println(num);
+        int[] actualResult = {1, 2, 3, 4};
+
+        int[] expectedResult = lessonStream.mappingToArray(list);
+        assertEquals(expectedResult, actualResult);
         }
     }
-}
